@@ -1,0 +1,15 @@
+on: [push]
+
+name: AzurePowerShellSample
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    
+    - name: Login via Az module
+      uses: garvitarai/azslogin
+      with:
+        creds: ${{ secrets.AZURESTACK_CREDENTIALS }}
+        enable-AzPSSession: true 
